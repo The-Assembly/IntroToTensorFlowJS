@@ -49,9 +49,6 @@ const TRAIN_BATCHES = 150;
 const TEST_BATCH_SIZE = 1000;
 const TEST_ITERATION_FREQUENCY = 5;
 
-
-
-
 canvas = document.createElement('canvas');
 canvas.setAttribute('width', canvasWidth);
 canvas.setAttribute('height', canvasHeight);
@@ -101,6 +98,8 @@ async function train(){
   }
 
   console.log('Model trained')
+  document.getElementById("status").innerHTML = "Model trained";
+
 }
 
 let data;
@@ -112,6 +111,8 @@ async function load() {
 // This is our main function. It loads the MNIST data, trains the model, and
 // then shows what the model predicted on unseen test data.
 async function mnist() {
+  document.getElementById("status").innerHTML = "Training...";
+
   await load();
   await train();
 }
@@ -149,9 +150,7 @@ function addClick(x, y, dragging)
   clickDrag.push(dragging);
 }
 
-function redraw(){
-    
-    
+function redraw(){    
     context.strokeStyle = "#111111";
     context.lineJoin = "round";
     context.lineWidth = 10;
@@ -191,10 +190,8 @@ async function saveDrawing() {
 }
 
 async function predict(imageData){
-
   const pred = await tf.tidy(() => {
 
- 
     let img = tf.fromPixels(imageData, 1);
     img = img.reshape([1 , 28, 28, 1]);
     img = tf.cast(img, 'float32');
@@ -220,8 +217,6 @@ function indexOfMax(arr) {
             max = arr[i];
         }
     }
-
+	
     return maxIndex;
 }
-
-
