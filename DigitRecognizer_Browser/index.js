@@ -101,6 +101,8 @@ async function train(){
   }
 
   console.log('Model trained')
+  document.getElementById("status").innerHTML = "Model trained";
+
 }
 
 let data;
@@ -112,6 +114,8 @@ async function load() {
 // This is our main function. It loads the MNIST data, trains the model, and
 // then shows what the model predicted on unseen test data.
 async function mnist() {
+  document.getElementById("status").innerHTML = "Training...";
+
   await load();
   await train();
 }
