@@ -2,7 +2,11 @@
 
 If you are not running it on a server/loclhost open index.html in firefox. Other browsers aren't supported with the tensorflow js api because security reasons.
 
-If you are running it on a host go crazy and open it on any browser
+If you are running it on a host (such as node/wamp/nginx), can open it on any browser
+
+There are two different methods used here, each in a separate subfolder:
+1- Using the TFJS Layers API (Using_layers)
+2- Using the TFJS Core API (Using_core)
 
 # Digit Recognizer
 
