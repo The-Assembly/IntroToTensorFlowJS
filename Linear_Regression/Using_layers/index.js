@@ -7,12 +7,14 @@ var datay = document.querySelector('#datay');
 var predictionText = document.querySelector('#predictions');
 
 
-linearModel = tf.sequential();
-
 var xs = "";
 var ys = "";
+var isModelTrained = false;
 
 trainButton.addEventListener("click", function(){
+
+    successText.innerHTML = "";
+    linearModel = tf.sequential();
 
     var arrayx = datax.value.split(",")
     var arrayy = datay.value.split(",")
@@ -26,18 +28,21 @@ trainButton.addEventListener("click", function(){
     // Training data, completely random stuff
     xs = tf.tensor1d(arrayx);
     ys = tf.tensor1d(arrayy);
-    linearModel.fit(xs, ys, {epochs: 10}).then(() => {
-        successText.innerHTML = "Model Tarined";
+
+    linearModel.fit(xs, ys, {epochs: 300}).then(() => {
+        isModelTrained = true;
+        successText.innerHTML = "Model Trained";
     });
 
 })
 
 predictionButton.addEventListener("click", function(e){
-        
-            // Use the model to do inference on a data point the model hasn't seen before:
-            // Open the browser devtools to see the output
+    if (isModelTrained)
+    {
             const output = linearModel.predict(tf.tensor2d([input.value], [1, 1]))
             const prediction = Array.from(output.dataSync())[0];
             
             predictionText.innerHTML = prediction;
+    }
+    else successText.innerHTML = "Model hasn't been trained yet"
 })
