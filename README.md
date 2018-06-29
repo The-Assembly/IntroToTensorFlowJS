@@ -18,27 +18,4 @@ If you are running it on a web server (such as node/wamp/nginx), you can open it
 
 Open the folder in a terminal and run: <code>npm install</code>
 
-If you don't have a file named <b>.babelrc</b> create one and copy the following code into it
-
-    {
-    "presets": [
-        [
-        "env",
-        {
-            "esmodules": false,
-            "targets": {
-            "browsers": [
-                "> 3%"
-            ]
-            }
-        }
-        ]
-    ],
-    "plugins": [
-        "transform-runtime"
-    ]
-    }
-
-Decrease or increase the number of epochs on line 86 in index.js depending on the specs of your computer
-
-
+From terminal: <code>npm run watch</code>
