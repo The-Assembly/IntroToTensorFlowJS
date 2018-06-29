@@ -1,8 +1,8 @@
 # Linear Regression
 
-If you are not running it on a server/loclhost open index.html in firefox. Other browsers aren't supported with the tensorflow js api because security reasons.
+For either sample, you can open index.html in Firefox directly from file explorer, without loading it on to a web server first. The js won't run properly in other browsers due to security reasons, so you won't see the desired results on those.
 
-If you are running it on a host (such as node/wamp/nginx), can open it on any browser
+If you are running it on a web server (such as node/wamp/nginx), you can open it on any browser.
 
 There are two different methods used here, each in a separate subfolder:
 1- Using the TFJS Layers API (Using_layers)
@@ -10,11 +10,9 @@ There are two different methods used here, each in a separate subfolder:
 
 # Digit Recognizer
 
-If you are not running it on a server/loclhost open index.html in firefox. Other browsers aren't supported with the tensorflow js api because security reasons.
+For either sample, you can open index.html in Firefox directly from file explorer, without loading it on to a web server first. The js won't run properly in other browsers due to security reasons, so you won't see the desired results on those.
 
-If you are running it on a host go crazy and open it on any browser
-
-PS : I recommend running it on node / wamp or something that'll put it on a localhost / host
+If you are running it on a web server (such as node/wamp/nginx), you can open it on any browser.
 
 # Digit Recognizer Browser
 
