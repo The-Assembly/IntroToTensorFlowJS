@@ -37,6 +37,6 @@ If you don't have a file named <b>.babelrc</b> create one and copy the following
     ]
     }
 
-Decrease or increase the number of epochs on line 86 in index.js depending on the specs of your computer is
+Decrease or increase the number of epochs on line 86 in index.js depending on the specs of your computer
 
 
